@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block navigation %}
+<a href="{{ url_for('article_edit_view', path=path) }}">Edit</a>
+<span class="selected">Read</span>
+{% endblock navigation %}
+
+{% block content %}
+<pre>
+{{ content }}
+</pre>
+{% endblock content %}
+
+{% block footer %}
+{% endblock footer %}

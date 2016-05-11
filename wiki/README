@@ -1,0 +1,8 @@
+a hg-based wiki demo, does not really work.
+
+  ./wiki.py init
+  ./wiki.py add-user user@example.com username
+  ./wiki.py run
+
+visit http://127.0.0.1:8000/ . to edit HOME page, you
+have to login with email your add-user with.

@@ -1,0 +1,125 @@
+html {
+  margin: 0;
+  padding: 0;
+  background: #eee;
+  height: 100%;
+}
+
+body {
+  width: 50em;
+  margin: 0 auto;
+  height: 100%;
+}
+
+a:link {
+  text-decoration: none;
+}
+
+a:link,
+a:visited,
+a:active {
+  color: #06b;
+}
+
+a:active,
+a:focus {
+  outline: none;
+}
+
+a:active,
+a:hover {
+  text-decoration: underline;
+}
+
+table.main-wrapper {
+  height: 100%;
+  width: 100%;
+  border-collapse: collapse;
+}
+
+td.navigation {
+  width: 100%;
+  padding: 1em 0 0;
+  text-align: right;
+  font-size: small;
+}
+
+td.content {
+  clear: both;
+  vertical-align: top;
+  padding: 0 2em 2em;
+  height: 100%;
+  background: #fff;
+  border: 1px solid #ccc;
+}
+
+td.footer {
+  font-size: small;
+  padding: 1em;
+}
+
+td.navigation span.selected {
+  display: block;
+  float: right;
+
+  margin: 0 2em -2px 0;
+  padding: 0.1em 2em 2px;
+  background: #fff;
+  border: 1px solid;
+  border-color: #ccc #ccc #fff;
+}
+
+td.navigation a:link {
+  display: block;
+  float: right;
+
+  margin: 0 2em 0 0;
+  padding: 0.1em 2em 1px;
+  background: #fff;
+}
+
+td.navigation a:link,
+td.navigation a:visited {
+  border: solid #ccc;
+  border-width: 1px 1px 0;
+}
+
+td.content h1 {
+  margin: 0 0 1em;
+  padding-top: 1em;
+  border-bottom: 1px solid #ccc;
+}
+
+table.diff {
+  width: 100%;
+  border-collapse: collapse;
+  counter-reset: lno_a lno_b;
+}
+
+table.diff tr.d {
+  background: #fdd;
+}
+
+table.diff tr.i {
+  background: #dfd;
+}
+
+table.diff td.lno,
+table.diff td.lno_a,
+table.diff td.lno_b {
+  text-align: right;
+  color: #aaa;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+}
+
+table.diff td.lno_a:after {
+  counter-increment: lno_a;
+  content: counter(lno_a, decimal);
+}
+
+table.diff td.lno_b:after {
+  counter-increment: lno_b;
+  content: counter(lno_b, decimal);
+}

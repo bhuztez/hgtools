@@ -1,0 +1,13 @@
+enable remotemq extension on both sides
+
+  [extensions]
+  remotemq = /path/to/remotehq.py
+
+have configured default path on local repository
+
+  [paths]
+  default = /path/to/remote/repository/
+
+run `hg push --mq` will push your patch repsitory to
+
+  /path/to/remote/repository/.hg/patches

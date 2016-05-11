@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+{% block navigation %}
+<span class="selected">Edit</span>
+<a href="{{ url_for('article_detail_view', path=path) }}">Read</a>
+{% endblock navigation %}
+
+{% block content %}
+<form action="" method="POST" enctype="multipart/form-data">
+<div id="mergeview">
+<textarea id="content" name="content" cols="71" rows="24">
+{{ content }}
+</textarea>
+</div>
+<input type="hidden" name="parent" value="{{ parent }}" />
+<input type="submit" value="Edit" />
+<input type="hidden" name="csrf-token" value="{{ csrf_token }}" />
+</form>
+
+{% if diff %}
+<script type="text/javascript">
+window.addEventListener('load', function(){
+var content = document.getElementById("content");
+content.setAttribute("style", "display: none;");
+var container = document.getElementById("mergeview");
+var view = new CodeMirror.MergeView(container,
+{
+value: content.value,
+origLeft: {{ diff[0]|tojson }},
+origRight: {{ diff[1]|tojson }},
+highlightDifferences: true,
+mode: "text/plain",
+});
+
+CodeMirror.on(view.editor(),"changes",
+function(e){
+content.value = view.editor().getValue();
+});
+
+});
+</script>
+{% endif %}
+
+{% endblock content %}
+
+{% block footer %}
+{% endblock footer %}

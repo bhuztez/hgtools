@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>{{ title }}</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='base.css') }}" type="text/css" media="screen" />
+
+<link  rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.14.2/codemirror.min.css" type="text/css" media="screen" />
+<link  rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.14.2/addon/merge/merge.min.css" type="text/css" media="screen" />
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.14.2/codemirror.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/diff_match_patch/20121119/diff_match_patch.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.14.2/addon/merge/merge.min.js"></script>
+</head>
+
+<body>
+<table class="main-wrapper">
+<tbody>
+<tr class="navigation">
+  <td class="navigation">
+    {% block navigation %}{% endblock navigation %}
+  </td>
+</tr>
+
+<tr class="content">
+  <td class="content">
+    <h1>{{ title }}</h1>
+
+    {% block content %}{% endblock content %}
+  </td>
+</tr>
+
+<tr>
+  <td class="footer">
+    {% block footer %}{% endblock footer %}
+  </td>
+</tr>
+</tbody>
+</table>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Log In</title>
+</head>
+
+<body>
+<h1>Log In</h1>
+
+<form action="{{ url_for('login_view') }}" method="POST">
+<input type="text" name="email" value = "{{ email }}"/>
+<input type="password" name="password" />
+<input type="submit" value="Log In" />
+<input type="hidden" name="csrf-token" value="{{ csrf_token }}" />
+<input type="hidden" name="redirect_to" value="{{ redirect_to }}" />
+</form>
+
+</body>
+</html>
